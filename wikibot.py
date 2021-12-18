@@ -41,6 +41,7 @@ def telegram_polling():
         bot.polling(none_stop=True, timeout=10)
     except:
         bot.stop_polling()
+        time.sleep(5)
         telegram_polling()
 
 if __name__ == "__main__":
