@@ -1,6 +1,6 @@
-import telebot, wikipedia, time, sys
+import telebot, wikipedia, time, os
 
-bot = telebot.TeleBot(sys.argv[1])
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 def getwiki(text):
     try:
