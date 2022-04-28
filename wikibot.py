@@ -7,11 +7,13 @@ def getwiki(text):
         wikipedia.set_lang("ru")
         ny = wikipedia.page(text[6:])
         return ny.url
+    
     except Exception as e:
         try:
             wikipedia.set_lang("eu")
             ny = wikipedia.page(text[6:])
             return ny.url
+        
         except Exception as e:
             return "Article not found!"
 
@@ -21,6 +23,7 @@ def getcont(text):
         ny = wikipedia.page(text[9:])
         string = ny.content
         return string[:string.find("\n")]
+    
     except Exception as e:
         return "Content not found!"
 
@@ -39,6 +42,7 @@ def handle_cont(message):
 def telegram_polling():
     try:
         bot.polling(none_stop=True, timeout=10)
+    
     except:
         bot.stop_polling()
         time.sleep(5)
